@@ -36,7 +36,7 @@ Este projeto foi criado para praticar:
   - ou mensagem de erro, caso ocorra alguma falha.
 - Salva uma nova planilha com o resultado da execução.
 
-## Estrutura de pastas
+## Estrutura do projeto
 
 ```text
 consulta-juridica-selenium/
@@ -120,19 +120,8 @@ A coluna `Cidade` precisa ter o mesmo texto exibido no menu da página HTML, por
 - Rio de Janeiro
 - São Paulo
 
-## Observações importantes
+## Observações
 
 Este projeto usa páginas HTML locais apenas para fins de estudo. Ele não consulta sistemas jurídicos reais.
 
 O resultado da pesquisa é simulado pela página `pesquisa_estadual.html`, que retorna aleatoriamente se um processo foi encontrado ou não. Portanto, o foco do projeto é praticar a automação, não obter dados jurídicos reais.
-
-Não publique planilhas com dados reais de pessoas, processos, clientes ou advogados. Use somente arquivos de exemplo no GitHub.
-
-## Possíveis melhorias futuras
-
-- Validar se todas as colunas obrigatórias existem antes de iniciar a automação.
-- Criar mensagens de erro mais específicas para estado não encontrado.
-- Separar funções auxiliares em outro arquivo Python, caso o projeto cresça.
-- Salvar um log simples da execução.
-- Substituir a resposta aleatória da página HTML por uma base simulada fixa.
-- Criar uma versão com interface mais amigável para selecionar a planilha.
