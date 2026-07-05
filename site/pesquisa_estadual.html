@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa estadual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0 25px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        form {
+            width: 33%;
+        }
+
+        .centraliza {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 100%;
+            background-color: #047baa;
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+    </style>
+
+    <script>
+        function renomearTitulo() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const estado = urlParams.get("estado") || "UF";
+
+            document.querySelector("h1").innerHTML = "Pesquisa jurídica - " + estado;
+        }
+
+        document.addEventListener("DOMContentLoaded", renomearTitulo);
+
+        async function pesquisar() {
+            if (confirm("Vamos buscar no nosso banco de dados, por favor aguarde. Pode durar alguns minutos.")) {
+                await new Promise(resolve => setTimeout(resolve, 3000));
+
+                if (Math.random() < 0.5) {
+                    alert("Nenhum processo encontrado!");
+                } else {
+                    confirm("Processo encontrado com sucesso! Deseja acessar?");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="centraliza">
+        <form id="formulario">
+            <div class="container">
+                <h1>Pesquisa</h1>
+
+                <label for="nome"><b>Nome da parte</b></label>
+                <input type="text" id="nome" name="nome">
+
+                <label for="advogado"><b>Advogado</b></label>
+                <input type="text" id="advogado" name="advogado">
+
+                <label for="numero"><b>Número do processo</b></label>
+                <input type="text" id="numero" name="numero">
+
+                <button type="button" class="registerbtn" onclick="pesquisar()">Pesquisar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
